@@ -9,7 +9,7 @@ module Tr3llo
 
       REMOTE_HOST = "api.trello.com".freeze()
       REMOTE_PORT = 443
-      BASE_PATH = "/1"
+      BASE_PATH = "/1".freeze
 
       def get(path, params = {})
         request_uri = URI::HTTPS.build(path: BASE_PATH + path, query: query_string(params))

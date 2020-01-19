@@ -2,7 +2,7 @@ module Tr3llo
   class RemoteServer
     attr_reader :endpoint_uri
 
-    EXPECTED_CODES = ["200"]
+    EXPECTED_CODES = ["200"].freeze
 
     def initialize(endpoint_url)
       @endpoint_uri = URI(endpoint_url)
