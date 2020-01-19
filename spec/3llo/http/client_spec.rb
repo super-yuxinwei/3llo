@@ -14,7 +14,12 @@ describe Tr3llo::RemoteServer, type: :http_request do
 
   describe ".post" do
     it "makes a POST request to the remote server" do
-      payload = client.post("/post?abc=xyz", {"Accept" => "text/plain", "Content-type" => "application/json"}, {"foo" => "bar"})
+      payload =
+        client.post(
+          "/post?abc=xyz",
+          {"Accept" => "text/plain", "Content-type" => "application/json"},
+          {"foo" => "bar"}
+        )
 
       expect(payload["args"]).to eq({"abc" => "xyz"})
       expect(payload["data"]).to eq(JSON.dump({"foo" => "bar"}))
@@ -24,7 +29,12 @@ describe Tr3llo::RemoteServer, type: :http_request do
 
   describe ".put" do
     it "makes a PUT request to the remote server" do
-      payload = client.put("/put?abc=xyz", {"Accept" => "text/plain", "Content-type" => "application/json"}, {"foo" => "bar"})
+      payload =
+        client.put(
+          "/put?abc=xyz",
+          {"Accept" => "text/plain", "Content-type" => "application/json"},
+          {"foo" => "bar"}
+        )
 
       expect(payload["args"]).to eq({"abc" => "xyz"})
       expect(payload["data"]).to eq(JSON.dump({"foo" => "bar"}))
